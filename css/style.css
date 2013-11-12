@@ -22,27 +22,45 @@ html, body {
 }
 
 #header {
-    background: blue;
     height: 150px;
 }
 
 #sidebar-a {
     float: right;
     width: 280px;
-    background: darkgreen;
 }
 
 #content {
     margin-right: 280px;
-    background: green;
+}
+
+#content h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#content p {
+    margin: 0;
+    padding: 0;
 }
 
 #footer {
     clear: both;
-    background: orange;
     height: 66px;
+}
+
+body {
+    font-family: Arial, Helvetica, Verdana, Sans-serif;
+    font-size: 12px;
+    color: #666666;
+    background: #ffffff;
 }
 
 .hidden {
     display: none;
+}
+
+h1 {
+    margin: 0;
+    paddding: 0;
 }
