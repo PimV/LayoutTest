@@ -17,7 +17,8 @@ html, body {
 }
 
 #main-nav {
-    height: 30px;
+    height: 90px;
+    overflow: hidden;
 }
 
 #main-nav ul {
@@ -31,20 +32,38 @@ html, body {
 
 #main-nav li a {
     display: block;
-    height: 0px;
-    padding: 30px 0 0 0;
+    height: 90px;
+    padding: 90px 0 0 0;
     overflow: hidden;
     background-repeat: no-repeat;
 }
 
 #main-nav li a:hover {
-    background-position: 0 -30px;
+    background-position: 0 -90px;
 }
 
 #main-nav li#about,
 #main-nav li#about a { 
-    width: 71px; 
-    background-image: url(../images/nav/about.png); }
+    width: 100px; 
+    background-image: url(../images/nav/about.png);
+}
+
+body.about li#about,
+body.about li#about a,
+body.services dt#services,
+body.services dt#services a,
+body.portfolio dt#portfolio,
+body.portfolio dt#portfolio a,
+body.contact dt#contact,
+body.contact dt#contact a {
+	background-position: 0 -180px;
+       
+}
+
+body.about #header {
+  
+    
+}
 
 #header {
     height: 150px;

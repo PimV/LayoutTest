@@ -5,11 +5,11 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <title></title>
     </head>
-    <body>
+    <body class="about">
         <div id="page-container">
             <div id="main-nav">
                 <ul >
-                    <li id="about" ><a href="about.php">About<a/></li>
+                    <li id="about"><a href="#">About<a/></li>
                     <li id="services"><a href="#">Services<a/></li>
                     <li id="portfolio"><a href="#">Porftolio<a/></li>
                     <li id="contact"><a href="#">Contact<a/></li>
@@ -22,23 +22,10 @@
                 <div class="padding">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam gravida enim ut risus. 
                     Praesent sapien purus, ultrices a, varius ac, suscipit ut, enim. Maecenas in lectus. 
-                    Donec in sapien in nibh rutrum gravida. Sed ut mauris. Fusce malesuada enim vitae lacus 
-                    euismod vulputate. Nullam rhoncus mauris ac metus. Maecenas vulputate aliquam odio. 
-                    Duis scelerisque justo a pede. Nam augue lorem, semper at, porta eget, placerat eget, 
-                    purus. Suspendisse mattis nunc vestibulum ligula. In hac habitasse platea dictumst.
+
                 </div>
             </div>
-            <div id="content">
-                <?php
-                    $p = isset($_GET['p']) ? $_GET['p'] : '';
-                    $contentPath = 'content';
-                    switch ($p) {
-                        case 'index':
-                        default:
-                            require($contentPath . '/' . $p . '.php');
-                            break;
-                    }
-                ?>
+            <div id="content"> 
                 <div class="padding">
                     <h2><img src ="images/headings/about.png" width ="54" height ="20" alt="About"/></h2>
                     <p><strong>Progress In Motion</strong> is a specialized in
