@@ -9,14 +9,16 @@
         <div id="page-container">
             <div id="main-nav">
                 <ul >
-                    <li id="about" ><a href="about.php">About<a/></li>
-                    <li id="services"><a href="#">Services<a/></li>
-                    <li id="portfolio"><a href="#">Porftolio<a/></li>
-                    <li id="contact"><a href="#">Contact<a/></li>
+                    <li id="about" ><a href="index.php?page=about">About</a></li>
+                    <li id="services"><a href="index.php?page=services">Services</a></li>
+                    <li id="portfolio"><a href="index.php?page=portfolio">Portfolio</a></li>
+                    <li id="contact"><a href="index.php?page=contact">Contact</a></li>
                 </ul>
             </div>
             <div id="header">
-                <h1><img src ="images/headings/header_full.png" width ="760" height ="60" alt="Progress In Motion"/></h1>
+                <h1>                    
+                    <a href="index.php"><img src ="images/headings/header_full.png" width ="760" height ="60" alt="Progress In Motion"/></a>
+                </h1>
             </div>
             <div id="sidebar-a"> 
                 <div class="padding">
@@ -30,41 +32,38 @@
             </div>
             <div id="content">
                 <?php
-                    $p = isset($_GET['p']) ? $_GET['p'] : '';
-                    $contentPath = 'content';
-                    switch ($p) {
-                        case 'index':
-                        default:
-                            require($contentPath . '/' . $p . '.php');
-                            break;
-                    }
+                $p = !empty($_GET['page']) ? $_GET['page'] : 'index';
+                $p = preg_replace('/[^\da-z\-]/i', '', $p); // Allows A-z 0-9 and -
+                $contentPath = 'content';
+                if (!file_exists($contentPath . '/' . $p . '.php')) {
+                    $p = '404';
+                }
+                echo '<div id="'. $p .'">';
+                switch ($p) {
+                    // Pages
+                    case 'index':
+                    case 'about':
+                    case 'services':
+                    case 'portfolio':
+                    case 'contact':
+                        require($contentPath . '/' . $p . '.php');
+                        break;
+
+                    default:
+                        require($contentPath . '/404.php');
+                        break;
+                }
+                 echo '</div>';
                 ?>
-                <div class="padding">
-                    <h2><img src ="images/headings/about.png" width ="54" height ="20" alt="About"/></h2>
-                    <p><strong>Progress In Motion</strong> is a specialized in
-                        application development. Currently, this website is under 
-                        development and will be available soon. 
-                        <br/>
-                        <br/>
 
-                        You can always stay tuned, and check the 
-                        <strong> Progress In Motion </strong>!
-
-                    </p>
-                    <h2><img src ="images/headings/contact.png" width ="98" height ="20" alt="Contact"/></h2>
-                    <p>Phone:   (+31) 6 39 04 30 43<br />                       
-                        Email:   <a href="mailto:progressinmotion@gmail.com">progressinmotion@gmail.com</a><br />
-                        Postal Code: 5422CL Gemert, Netherlands</p>
-                    <p><a href="#">More contact information…</a></p>
-                </div>
 
             </div>
             <div id="footer">
                 <div id="altnav">
-                    <a href="#">About</a> - 
-                    <a href="#">Services</a> - 
-                    <a href="#">Portfolio</a> - 
-                    <a href="#">Contact Us</a> - 
+                    <a href="index.php?page=about">About</a> - 
+                    <a href="index.php?page=services">Services</a> - 
+                    <a href="index.php?page=portfolio">Portfolio</a> - 
+                    <a href="index.php?page=contact">Contact Us</a> - 
                     <a href="#">Terms of Trade</a>
                 </div>
                 Copyright © Progress In Motion

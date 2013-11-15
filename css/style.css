@@ -1,3 +1,52 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 /* 
     Document   : style
     Created on : 12-nov-2013, 13:22:55
@@ -28,12 +77,13 @@ html, body {
 
 #main-nav li {
     float: left;
+    margin-right: 50px;
 }
 
 #main-nav li a {
     display: block;
     height: 90px;
-    padding: 90px 0 0 0;
+    padding: 90px 0 0 0;   
     overflow: hidden;
     background-repeat: no-repeat;
 }
@@ -48,22 +98,36 @@ html, body {
     background-image: url(../images/nav/about.png);
 }
 
-body.about li#about,
-body.about li#about a,
-body.services dt#services,
-body.services dt#services a,
-body.portfolio dt#portfolio,
-body.portfolio dt#portfolio a,
-body.contact dt#contact,
-body.contact dt#contact a {
-	background-position: 0 -180px;
-       
+#main-nav li#contact,
+#main-nav li#contact a { 
+    width: 160px; 
+    background-image: url(../images/nav/contact.png);
 }
 
-body.about #header {
-  
-    
+#main-nav li#services,
+#main-nav li#services a { 
+    width: 120px; 
+    background-image: url(../images/nav/services.png);
 }
+
+#main-nav li#portfolio,
+#main-nav li#portfolio a { 
+    width: 130px; 
+    background-image: url(../images/nav/portfolio.png);
+}
+
+body.about li#about,
+body.about li#about a,
+body.services li#services,
+body.services li#services a,
+body.portfolio li#portfolio,
+body.portfolio li#portfolio a,
+body.contact li#contact,
+body.contact li#contact a {
+    background-position: 0 -180px;
+
+}
+
 
 #header {
     height: 150px;
